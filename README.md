@@ -1,1 +1,2 @@
 # MyAngular
+Iryna Lutscka
