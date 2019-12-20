@@ -1,0 +1,102 @@
+<div class="container-feed">
+    <div class="card-feed">
+        <div>
+            <p>READ MORE...</p>
+            <img [src]="this.listArticle[0].image" ></div>
+        <div class="infoCard">
+            <div>
+                <span>Programming</span>
+                <span>Software Developer</span>
+            </div>
+            <h3>{{this.listArticle[0].title}}</h3>
+            <div class="descripsionArticle">{{this.listArticle[0].description}}</div>
+            <div class="info">
+                <div class="author">
+                    <div>
+                        <img [src]="this.listArticle[0].photo" >
+                    </div>
+                    <div>{{this.listArticle[0].author}}</div>
+                </div>
+                <div class="likes">
+                    <div class="middleLike">
+                        <fa-icon [icon]="faHeart"></fa-icon>
+                        <div>{{this.listArticle[0].likes}}</div>
+                    </div>
+                    <div>
+                        <fa-icon [icon]="faStar"></fa-icon>
+                        <div>{{this.listArticle[0].stars}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-feed">
+        <div>
+            <p>READ MORE...</p>
+            <img [src]="this.listArticle[1].image" ></div>
+        <div class="infoCard">
+            <div>
+                <span>Programming</span>
+                <span>Software Developer</span>
+            </div>
+            <h3>{{this.listArticle[1].title}}</h3>
+            <div class="descripsionArticle">{{this.listArticle[1].description}}</div>
+            <div class="info">
+                <div class="author">
+                    <div>
+                        <img [src]="this.listArticle[1].photo" >
+                    </div>
+                    <div>{{this.listArticle[1].author}}</div>
+                </div>
+                <div class="likes">
+                    <div class="middleLike">
+                        <fa-icon [icon]="faHeart"></fa-icon>
+                        <div>{{this.listArticle[1].likes}}</div>
+                    </div>
+                    <div>
+                        <fa-icon [icon]="faStar"></fa-icon>
+                        <div>{{this.listArticle[1].stars}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card-feed">
+        <div>
+            <p>READ MORE...</p>
+            <img [src]="this.listArticle[2].image" ></div>
+        <div class="infoCard">
+            <div>
+                <span>Programming</span>
+                <span>Software Developer</span>
+            </div>
+            <h3>{{this.listArticle[2].title}}</h3>
+            <div class="descripsionArticle">{{this.listArticle[2].description}}</div>
+            <div class="info">
+                <div class="author">
+                    <div>
+                        <img [src]="this.listArticle[2].photo" >
+                    </div>
+                    <div>{{this.listArticle[2].author}}</div>
+                </div>
+                <div class="likes">
+                    <div class="middleLike">
+                        <fa-icon [icon]="faHeart"></fa-icon>
+                        <div>{{this.listArticle[2].likes}}</div>
+                    </div>
+                    <div>
+                        <fa-icon [icon]="faStar"></fa-icon>
+                        <div>{{this.listArticle[2].stars}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   <button><fa-icon [icon]="faCloudDownloadAlt"></fa-icon>load more</button>
+</div>
+
+
+    
+    
+   

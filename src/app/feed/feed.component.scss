@@ -1,0 +1,166 @@
+@import '../../styles/abstracts/variables';
+@import '../../styles/abstracts/mixins';
+
+
+.container-feed {
+    div, span, p, button {
+        font-size: 14px;
+    }
+    max-width: 1120px;
+    width: 90%;
+    margin: 100px auto;
+    .card-feed {
+        max-width: 1056px;
+        @include shadowsCard($grey);
+        height: 225px;
+        display: flex;
+        margin: 20px auto;
+        > div:first-child {
+            width: 33%;
+            display:flex;
+            justify-content: center; 
+            align-items: center; 
+            overflow: hidden;
+            position: relative;
+            p {
+                padding: 3px;
+                background-color: rgba(210, 210, 210, .8);
+                position: absolute;
+                bottom: 20px;
+                right: 5px;
+                color: $white;
+                opacity: 0;
+                font-size: 20px;
+                z-index: 10;
+                transform: translate(200%);
+                transition: all .5s ease;
+            }
+            &:hover {
+                p {
+                    transform: translate(0%);
+                    opacity: 1;
+                }
+                &::after {
+                transform: translate(50%) skew(-45deg);
+                z-index: 5;
+                }
+            }
+            &::after {
+                content: " ";
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                transform: translate(200%) skew(-45deg);
+                background-color: rgba(210, 210, 210, .8);
+                right: 0;
+                bottom: 0;
+                z-index: -5;
+                transition: all .5s ease;
+            }
+            img {
+                display: block;
+                width: auto;
+                height: 100%;
+            }
+        }
+        .infoCard {
+            position: relative;
+            width: 67%;
+            padding: 20px;
+            @include tagSpan;
+            h3 {
+                padding: 15px 0;
+                font-size: 1.43em;
+                font-weight: $bold;
+                text-transform: capitalize;
+            }
+            .info {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                margin: 10px 20px;
+                @include infoAuthorLike;
+                > div >div {
+                    padding: 2px 10px;
+                }
+                .author {
+                    div:first-child {
+                        height: 34px;
+                        width: 34px;
+                    }
+                }
+                .likes > div div {
+                    padding-left: 5px;
+                    font-size: .85em;
+                }
+            }
+        }
+
+    }
+    button {
+        height: 40px;
+        width: 300px;
+        border-radius: 25px;
+        background-color: $blue;
+        color: $white;
+        display: block;
+        margin: auto;
+        text-transform: uppercase;
+        fa-icon {
+            color: $white;
+            padding-right: 10px;
+        }
+    }
+}
+@media(max-width: 800px) {
+    .container-feed {
+        div, span, p, button {
+            font-size: 12px;
+        }
+        .card-feed {
+            height: 190px;
+            > div:first-child {
+                &::after {
+                    display: none;
+                }
+                 p {
+                  display: none;
+                }
+            }
+        }
+    }
+}
+@media(max-width: 600px) {
+    .container-feed {
+        div, span, p, button {
+            font-size: 9px;
+        }
+        .card-feed {
+            > div:first-child {
+                width: 40%;
+            }
+            height: 130px;
+        }
+        .card-feed .infoCard {
+            width: 60%;
+            padding: 10px;
+            h3 {
+                padding: 0 0 5px;
+                font-size: 1.1em;
+            }
+            div:first-child  {
+                display: none;
+            }
+            .info {
+                margin: 0px 10px;   
+                .author div:first-child {
+                    height: 24px;
+                    width: 24px;
+                }
+
+            }
+           
+        }
+    }
+}

@@ -1,0 +1,109 @@
+@mixin shadowsSidebar($color) {
+    box-shadow: 0 0 10px transparentize($color, .05);
+    }
+@mixin shadowsCard($color) {
+    box-shadow: 0 2px 8px transparentize($color, .15);
+    }
+@mixin shadowsLogin($color) {
+    box-shadow: 0 0 10px transparentize($color, .15);
+    }
+
+@mixin photoIcon {
+    height: 44px;
+    width: 44px;
+    border: solid 1px $blue;
+    border-radius: 100%;
+    padding: 0;
+    img {
+        display: block;
+        margin: auto;
+        height: 90%;
+        width: 90%;
+        border-radius: 100%;
+    }
+}
+@mixin placeholderInput ($color) {
+    input::-webkit-input-placeholder {
+        color: $color;
+      }
+      input::-moz-placeholder {
+        color: $color;
+      }
+      input:-moz-placeholder {
+        color: $color;
+      }
+      input:-ms-input-placeholder {
+        color: $color;
+      }
+      
+      input:focus::-webkit-input-placeholder {
+        color: transparent;
+      }
+      input:focus::-moz-placeholder {
+        color: transparent;
+      }
+      input:focus:-moz-placeholder {
+        color: transparent;
+      }
+      input:focus:-ms-input-placeholder {
+        color: transparent;
+      }
+}
+@mixin iconUser{
+    
+    fa-icon {
+        color: $blue;
+        font-size: 24px;
+    }
+
+}
+@mixin tagSpan {
+    span {
+        padding: 2px 15px;
+        background-color: $grey;
+        border-radius: 15px;
+        margin-right: 20px;
+        text-transform: capitalize;
+    }
+}
+@mixin infoAuthorLike {
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between; 
+        fa-icon {
+            color: $grey;
+        }
+        >div {
+            >div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+        .author {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            >div {
+                text-transform: uppercase;
+                &:first-child {
+                    @include photoIcon;
+                }
+            }
+        }
+        .likes {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            .middleLike {
+                height: 25px;
+                border-right: solid 1px $grey;
+            }
+            >div div{
+                    display: flex;
+                    align-items: center;
+                    height: inherit;
+               
+            }
+        }
+}
