@@ -1,0 +1,239 @@
+<div class="container">
+    <div class="container-profile">
+        <div class="circle"></div>
+        <div>
+            
+            <div>
+                <div class="photo"></div>
+                <div class="name">{{this.authorUser}}</div>
+            </div>
+            <div class="userInfo">
+                <div>
+                    <div class="infoRow">Joined</div>
+                    <div>12 November 2019</div>
+                </div>
+                <div>
+                    <div class="infoRow">Gender</div>
+                    <div>Male</div>
+                </div>
+                <div>
+                    <div class="infoRow">Status</div>
+                    <div>{{this.status}}</div>
+                </div>
+                <div>
+                    <div class="infoRow">Email</div>
+                    <div>pwhite@gmail.com</div>
+                </div>
+            </div>
+        </div>
+        <h3>Most popular articles</h3>
+        <div class="popular">
+            <div class="blockArticles">
+                <div class="longCard smallCard">
+                    <div class="image" style="background-image: url(https://nortsov.vn.ua/wp-content/uploads/2018/05/home-slide-1.jpg);"></div>
+                    <div class="title">{{this.title[2]}}</div>
+                    <div class="discripsion">{{this.description[3]}}</div>
+                    <div class="info">
+                        <div class="author">
+                            <div> <div class="photoAuthor" style="background-image: url(https://i.pinimg.com/originals/28/8a/0a/288a0a8bafb429a3a16a037869d85dc9.jpg)"></div></div>
+                        <div>{{this.author[3]}}</div>
+                        </div>
+                        <div class="likes">
+                            <div class="middleLike">
+                                <fa-icon [icon]="faHeart"></fa-icon>
+                                <div>{{this.likes[2]}}</div>
+                            </div>
+                            <div>
+                                <fa-icon [icon]="faStar"></fa-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="smallCard">
+                    <div class="image" style="background-image: url(https://cdn.pixabay.com/photo/2019/11/25/17/05/new-years-eve-4652544_960_720.jpg);"></div>
+                    <div class="title">{{this.title[3]}}</div>
+                    <div class="info">
+                        <div class="author">
+                            <div> <div class="photoAuthor" style="background-image: url(https://i.pinimg.com/originals/28/8a/0a/288a0a8bafb429a3a16a037869d85dc9.jpg)"></div></div>
+                        <div>{{this.author[3]}}</div>
+                        </div>
+                        <div class="likes">
+                            <div class="middleLike">
+                                <fa-icon [icon]="faHeart"></fa-icon>
+                                <div>{{this.likes[3]}}</div>
+                            </div>
+                            <div>
+                                <fa-icon [icon]="faStar"></fa-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="smallCard noExist">
+                    <div class="image" style="background-image: url(https://cdn.pixabay.com/photo/2019/11/25/17/05/new-years-eve-4652544_960_720.jpg);"></div>
+                    <div class="title">{{this.title[3]}}</div>
+                   <div class="info">
+                        <div class="author">
+                            <div> <div class="photoAuthor" style="background-image: url(https://i.pinimg.com/originals/28/8a/0a/288a0a8bafb429a3a16a037869d85dc9.jpg)"></div></div>
+                        <div>{{this.author[3]}}</div>
+                        </div>
+                        <div class="likes">
+                            <div class="middleLike">
+                                <fa-icon [icon]="faHeart"></fa-icon>
+                                <div>{{this.likes[3]}}</div>
+                            </div>
+                            <div>
+                                <fa-icon [icon]="faStar"></fa-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="smallCard noExist">
+                    <div class="image" style="background-image: url(http://richinvest.biz/wp-content/uploads/2016/01/red-rounded-with-number-5-md.png);"></div>
+                    <div class="title">{{this.title[0]}}</div>
+                   <div class="info">
+                        <div class="author">
+                            <div> <div class="photoAuthor" style="background-image: url(https://i.pinimg.com/originals/28/8a/0a/288a0a8bafb429a3a16a037869d85dc9.jpg)"></div></div>
+                        <div>{{this.author[3]}}</div>
+                        </div>
+                        <div class="likes">
+                            <div class="middleLike">
+                                <fa-icon [icon]="faHeart"></fa-icon>
+                                <div>{{this.likes[0]}}</div>
+                            </div>
+                            <div>
+                                <fa-icon [icon]="faStar"></fa-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="smallCard noExist">
+                    <div class="image" style="background-image: url(https://s.dou.ua/img/announces/java8_zOfLHJC.png);"></div>
+                    <div class="title">{{this.title[1]}}</div>
+                   <div class="info">
+                        <div class="author">
+                            <div> <div class="photoAuthor" style="background-image: url(https://i.pinimg.com/originals/28/8a/0a/288a0a8bafb429a3a16a037869d85dc9.jpg)"></div></div>
+                        <div>{{this.author[3]}}</div>
+                        </div>
+                        <div class="likes">
+                            <div class="middleLike">
+                                <fa-icon [icon]="faHeart"></fa-icon>
+                                <div>{{this.likes[1]}}</div>
+                            </div>
+                            <div>
+                                <fa-icon [icon]="faStar"></fa-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="userStats">
+                <div class="stats">
+                    <div>
+                        <div class="figure">12</div>
+                        <div class="figureDiscr">Articles created</div>
+                    </div>
+                    <div>
+                        <div class="figure">403</div>
+                        <div class="figureDiscr">Likes received</div>
+                    </div>
+                    <div>
+                        <div class="figure">34</div>
+                        <div class="figureDiscr">Comments written</div>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        <h3>Newest</h3>
+        <div class="wideCard">
+            <div class="image" style="background-image: url(https://cdn.pixabay.com/photo/2019/11/25/17/05/new-years-eve-4652544_960_720.jpg);"></div>
+            <div class="contentCard">
+                <div class="tags noExist">
+                    <span>Programming</span>
+                    <span>Software Developer</span>
+                </div>
+                <div class="title">{{this.title[3]}}</div>
+                <div class="discripsion">{{this.description[3]}}</div>
+                <div class="info">
+                    <div class="author">
+                        <div> <div class="photoAuthor" style="background-image: url(https://i.pinimg.com/originals/28/8a/0a/288a0a8bafb429a3a16a037869d85dc9.jpg)"></div></div>
+                    <div>{{this.author[3]}}</div>
+                    </div>
+                    <div class="likes">
+                        <div class="middleLike">
+                            <fa-icon [icon]="faHeart"></fa-icon>
+                            <div>{{this.likes[3]}}</div>
+                        </div>
+                        <div>
+                            <fa-icon [icon]="faStar"></fa-icon>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        <div class="listPopular">
+            <div>
+                <div class="smallCard">
+                    <div class="image" style="background-image: url(http://richinvest.biz/wp-content/uploads/2016/01/red-rounded-with-number-5-md.png);"></div>
+                    <div class="title">{{this.title[0]}}</div>
+                    <div class="info">
+                        <div class="author">
+                            <div> <div class="photoAuthor" style="background-image: url(https://i.pinimg.com/originals/28/8a/0a/288a0a8bafb429a3a16a037869d85dc9.jpg)"></div></div>
+                        <div>{{this.author[3]}}</div>
+                        </div>
+                        <div class="likes">
+                            <div class="middleLike">
+                                <fa-icon [icon]="faHeart"></fa-icon>
+                                <div>{{this.likes[0]}}</div>
+                            </div>
+                            <div>
+                                <fa-icon [icon]="faStar"></fa-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="smallCard">
+                    <div class="image" style="background-image: url(https://s.dou.ua/img/announces/java8_zOfLHJC.png);"></div>
+                    <div class="title">{{this.title[1]}}</div>
+                    <div class="info">
+                        <div class="author">
+                            <div> <div class="photoAuthor" style="background-image: url(https://i.pinimg.com/originals/28/8a/0a/288a0a8bafb429a3a16a037869d85dc9.jpg)"></div></div>
+                        <div>{{this.author[3]}}</div>
+                        </div>
+                        <div class="likes">
+                            <div class="middleLike">
+                                <fa-icon [icon]="faHeart"></fa-icon>
+                                <div>{{this.likes[1]}}</div>
+                            </div>
+                            <div>
+                                <fa-icon [icon]="faStar"></fa-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="smallCard noExist">
+                    <div class="image" style="background-image: url(https://nortsov.vn.ua/wp-content/uploads/2018/05/home-slide-1.jpg);"></div>
+                    <div class="title">{{this.title[2]}}</div>
+                    <div class="info">
+                        <div class="author">
+                            <div> <div class="photoAuthor" style="background-image: url(https://i.pinimg.com/originals/28/8a/0a/288a0a8bafb429a3a16a037869d85dc9.jpg)"></div></div>
+                        <div>{{this.author[3]}}</div>
+                        </div>
+                        <div class="likes">
+                            <div class="middleLike">
+                                <fa-icon [icon]="faHeart"></fa-icon>
+                                <div>{{this.likes[2]}}</div>
+                            </div>
+                            <div>
+                                <fa-icon [icon]="faStar"></fa-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+</div>
