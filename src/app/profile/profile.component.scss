@@ -273,7 +273,6 @@ h3 {
     }
 }
 @media(max-width: 800px){
-   
     h3 {
         font-size: 25px;
         margin: 46px 0 30px 64px;
@@ -368,7 +367,6 @@ h3 {
 }
 @media(max-width: 600px) {
     h3 {
-        
         margin: 26px 0 20px 64px;
     }
     div {
@@ -388,7 +386,6 @@ h3 {
             height: 68px;
         }
         .name {
-            
             padding: 11px 0 20px;
         }
         .userInfo {
@@ -400,7 +397,6 @@ h3 {
             .infoRow {
                 font-size: 10px;
             }
-            
         }
         .wideCard {
             flex-direction: column;
@@ -417,14 +413,14 @@ h3 {
                 width: 100%;
                 height: 210px;
                 padding: 0;
-                
             }
             .title, .discripsion, .info {
                 padding: 10px 15px;
             }
         }
-        .popular {
-            // padding-left: 44px;
+        .popular .userStats .stats {
+            display: none;
         }
+        
     }
 }
