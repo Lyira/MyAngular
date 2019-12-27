@@ -6,15 +6,13 @@
     div, span, p, button {
         font-size: 14px;
     }
-    max-width: 1120px;
-    width: 90%;
-    margin: 100px auto;
     .card-feed {
-        max-width: 1056px;
+        max-width: 992px;
+        width: 95%;
         @include shadowsCard($grey);
         height: 225px;
         display: flex;
-        margin: 20px auto;
+        margin: 40px auto;
         > div:first-child {
             width: 33%;
             display:flex;
@@ -66,11 +64,14 @@
         .infoCard {
             position: relative;
             width: 67%;
-            padding: 20px;
+            padding: 27px 24px 24px 32px;
             @include tagSpan;
+            span {
+                margin-right: 8px;
+            }
             h3 {
-                padding: 15px 0;
-                font-size: 1.43em;
+                padding: 16px 0;
+                font-size: $fontText20;
                 font-weight: $bold;
                 text-transform: capitalize;
             }
@@ -79,10 +80,10 @@
                 bottom: 0;
                 right: 0;
                 left: 0;
-                margin: 10px 20px;
+                margin: 10px 24px 24px 32px;
                 @include infoAuthorLike;
                 > div >div {
-                    padding: 2px 10px;
+                    padding: 0 8px;
                 }
                 .author {
                     div:first-child {
@@ -92,20 +93,20 @@
                 }
                 .likes > div div {
                     padding-left: 5px;
-                    font-size: .85em;
+                    font-size: 14px;
                 }
             }
         }
-
     }
     button {
+        @include hoverLoad;
         height: 40px;
         width: 300px;
         border-radius: 25px;
         background-color: $blue;
         color: $white;
         display: block;
-        margin: auto;
+        margin: 0 auto 40px;
         text-transform: uppercase;
         fa-icon {
             color: $white;
@@ -120,47 +121,65 @@
         }
         .card-feed {
             height: 190px;
-            > div:first-child {
+            .card-image {
                 &::after {
                     display: none;
                 }
-                 p {
+                p {
                   display: none;
                 }
             }
+            .infoCard {
+                padding: 20px 17px 17px 25px;
+                h3 {
+                    font-size: 17px;
+                }
+                .info {
+                    margin: 5px 17px 17px 25px;
+                }
+                .descripsionArticle {
+                   display: none;
+                }
+            }
+        }
+        button {
+            width: 220px;
+            height: 34px;
         }
     }
 }
 @media(max-width: 600px) {
     .container-feed {
         div, span, p, button {
-            font-size: 9px;
+            font-size: 8px;
         }
         .card-feed {
-            > div:first-child {
+            .card-image {
                 width: 40%;
             }
             height: 130px;
-        }
-        .card-feed .infoCard {
-            width: 60%;
-            padding: 10px;
-            h3 {
-                padding: 0 0 5px;
-                font-size: 1.1em;
-            }
-            div:first-child  {
-                display: none;
-            }
-            .info {
-                margin: 0px 10px;   
-                .author div:first-child {
-                    height: 24px;
-                    width: 24px;
+            .infoCard {
+                span {
+                    padding: 2px 5px ;
                 }
-
+                width: 60%;
+                padding: 10px;
+                h3 {
+                    padding: 10px 0 5px;
+                    font-size: 11px;
+                }
+                .info {
+                    margin: 0px 10px;   
+                    .author div:first-child {
+                        height: 24px;
+                        width: 24px;
+                    }
+                }
             }
-           
+        }
+        button {
+            width: 150px;
+            height: 30px;
         }
     }
 }
