@@ -39,8 +39,16 @@ speed-measure-plugin*.json
 npm-debug.log
 yarn-error.log
 testem.log
+firebase-debug.log
 /typings
+
 
 # System Files
 .DS_Store
 Thumbs.db
+
+#Firebase
+.firebase/
+.firebaserc
+firebase.json
+
