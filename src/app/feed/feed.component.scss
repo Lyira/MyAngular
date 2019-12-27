@@ -91,9 +91,14 @@
                         width: 34px;
                     }
                 }
-                .likes > div div {
-                    padding-left: 5px;
-                    font-size: 14px;
+                .likes {
+                    fa-icon {
+                        @include hoverFont($blue); 
+                    }
+                    > div div {
+                        padding-left: 5px;
+                        font-size: 14px;
+                    }
                 }
             }
         }
