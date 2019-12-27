@@ -17,10 +17,12 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 16px;
+	font-size: $fontText16;
 	font: inherit;
 	font-family: $font;
 	vertical-align: baseline;
 	color: $color-text;
 	background-color: $bgcolor;
+	outline: none;
+	text-decoration: none;
 }
