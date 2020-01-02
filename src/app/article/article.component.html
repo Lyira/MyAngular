@@ -4,7 +4,7 @@
         <h3>{{this.title}}</h3>
         <div class="info">
             <div class="author">
-                <div> <div class="photoAuthor" style="background-image: url(https://i.pinimg.com/originals/28/8a/0a/288a0a8bafb429a3a16a037869d85dc9.jpg)"></div></div>
+                <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+this.photoAuthor+')'}"></div></div>
                 <div>{{this.author}}</div>
             </div>
             <div class="likes">
@@ -23,7 +23,7 @@
         <div class="article-text"><p>{{this.text}}</p></div>
         <div id="infoBorber" class="info">
             <div class="author">
-                <div> <div class="photoAuthor" style="background-image: url(https://i.pinimg.com/originals/28/8a/0a/288a0a8bafb429a3a16a037869d85dc9.jpg)"></div></div>
+                <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+this.photoAuthor+')'}"></div></div>
                 <div>kevin black</div>
             </div>
             <div class="likes">
