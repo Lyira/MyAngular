@@ -138,7 +138,8 @@ export const user = [
     "createdAt": '2019-12-09T04:55:19.411Z',
     "updatedAt": '2019-12-09T04:55:19.411Z',
     "lastLogin": 'qwer12rewq',
-    "posts": 'Post'
+    "posts": 'Post',
+    "photo" : 'https://i.pinimg.com/originals/28/8a/0a/288a0a8bafb429a3a16a037869d85dc9.jpg'
 
   },
 ]
