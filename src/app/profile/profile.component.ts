@@ -20,11 +20,13 @@ export class ProfileComponent implements OnInit {
   title= [];
   authorUser;
   status;
+  photoAuthor;
   constructor() { }
 
   ngOnInit() {
     this.authorUser = mockdata.user[0].firstName + " " + mockdata.user[0].lastName;
     this.status = mockdata.user[0].role;
+    this.photoAuthor = mockdata.user[0].photo;
     for (let i = 0; i < mockdata.listArticle.length; i++) {
       this.title[i] = mockdata.listArticle[i].title;
       this.description[i] = mockdata.listArticle[i].description;
