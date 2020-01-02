@@ -25,6 +25,7 @@ export class ArticleComponent implements OnInit {
   title;
   text;
   textComment;
+  photoAuthor;
 
   constructor() { }
 
@@ -36,6 +37,7 @@ export class ArticleComponent implements OnInit {
     this.image = mockdata.listArticle[3].image;
     this.text = mockdata.listArticle[3].text;
     this.textComment = mockdata.listArticle[3].comments.text;
+    this.photoAuthor = mockdata.user[0].photo;
   }
 
 }
