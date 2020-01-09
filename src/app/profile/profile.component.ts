@@ -10,31 +10,27 @@ import { faStar } from '@fortawesome/free-regular-svg-icons';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  faHeart = faHeart;
-  faStar = faStar;
+  faHeart:any = faHeart;
+  faStar:any = faStar;
 
-  description =[];
-  author = [];
-  image = []; 
-  likes = []; 
-  title= [];
-  authorUser;
-  status;
-  photoAuthor;
+  authorUser:string;
+  status:string;
+  photoAuthor:string;
+  gender:string;
+  email:string;
+  listArticles:object[];
+  setVariables() {
+    this.authorUser = mockdata.users[3].firstName + " " + mockdata.users[3].lastName;
+    this.status = mockdata.users[3].role;
+    this.photoAuthor = mockdata.users[3].photo;
+    this.gender = mockdata.users[3].gender;
+    this.email = mockdata.users[3].email;
+    this.listArticles = mockdata.listArticles;
+  }
   constructor() { }
 
   ngOnInit() {
-    this.authorUser = mockdata.user[0].firstName + " " + mockdata.user[0].lastName;
-    this.status = mockdata.user[0].role;
-    this.photoAuthor = mockdata.user[0].photo;
-    for (let i = 0; i < mockdata.listArticle.length; i++) {
-      this.title[i] = mockdata.listArticle[i].title;
-      this.description[i] = mockdata.listArticle[i].description;
-      this.author[i] = mockdata.listArticle[i].author;
-      this.likes[i] = mockdata.listArticle[i].reactionsCounts.likes;
-      this.image[i] = mockdata.listArticle[i].image;
-    }
-
+    this.setVariables(); 
   }
 
 }
