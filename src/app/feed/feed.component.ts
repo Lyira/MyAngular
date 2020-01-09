@@ -13,8 +13,9 @@ export class FeedComponent implements OnInit {
   faCloudDownloadAlt:any = faCloudDownloadAlt;
   faHeart:any = faHeart;
   faStar:any = faStar;
- 
-  users:object[];
+
+  
+  users:any;
   listArticles:object[];
   setVariables(){
     this.listArticles = mockdata.listArticles;
