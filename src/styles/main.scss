@@ -2,8 +2,42 @@
 @import 'abstracts/mixins';
 @import 'abstracts/placeholders';
 @import 'abstracts/variables';
-
 @import 'base/resest';
 @import 'base/typography';
-
 @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700&display=swap');
+
+
+
+.info {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between; 
+    >div >div {
+        @include rowPosition;
+    }
+}
+.author {
+    @include rowPosition($justify-content: flex-start);
+    >div {
+        text-transform: uppercase;
+        font-weight: 500;
+        &:first-child {
+            @include photoIcon;
+        }
+    }
+}
+.likes {
+    @include rowPosition($justify-content: flex-end);
+    >div div{
+        display: flex;
+        align-items: center;
+        height: inherit;
+    }
+}
+.middleLike {
+    height: 25px;
+    border-right: solid 1px $lightgrey;
+}
+button {
+    cursor: pointer;
+}
