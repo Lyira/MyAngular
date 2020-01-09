@@ -10,27 +10,19 @@ import * as mockdata from '../mockdata/mockdata.component';
 
 })
 export class FeedComponent implements OnInit {
-  faCloudDownloadAlt = faCloudDownloadAlt;
-  faHeart = faHeart;
-  faStar = faStar;
+  faCloudDownloadAlt:any = faCloudDownloadAlt;
+  faHeart:any = faHeart;
+  faStar:any = faStar;
  
-  description =[];
-  author = [];
-  image = []; 
-  likes = []; 
-  title= [];
-  
-  constructor() {  
-    
+  users:object[];
+  listArticles:object[];
+  setVariables(){
+    this.listArticles = mockdata.listArticles;
+    this.users = mockdata.users;
   }
+  constructor() { }
 
   ngOnInit() {
-    for (let i = 0; i < mockdata.listArticle.length; i++) {
-      this.title[i] = mockdata.listArticle[i].title;
-      this.description[i] = mockdata.listArticle[i].description;
-      this.author[i] = mockdata.listArticle[i].author;
-      this.likes[i] = mockdata.listArticle[i].reactionsCounts.likes;
-      this.image[i] = mockdata.listArticle[i].image;
-    }
+    this.setVariables();
   }
 }
