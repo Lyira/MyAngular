@@ -1,17 +1,17 @@
 <div class="arrowBack" routerLink="../feed"><fa-icon [icon]="faChevronLeft"></fa-icon> Back to feed</div>
 <div class="container-article">
     <div id="article">
-        <h3>{{this.title}}</h3>
+        <h3>{{title}}</h3>
         <div class="info">
             <div class="author">
-                <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+this.photoAuthor+')'}"></div></div>
-                <div>{{this.author}}</div>
+                <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+photoAuthor+')'}"></div></div>
+                <div>{{author}}</div>
             </div>
             <div class="likes">
                 <div>Novemder 29, 2019</div>
                 <div class="middleLike">
                     <fa-icon [icon]="faHeart"></fa-icon>
-                    <div>{{this.likes}}</div>
+                    <div>{{likes}}</div>
                 </div>
                 <div>
                     <fa-icon [icon]="faStar"></fa-icon>
@@ -19,18 +19,18 @@
                 </div>
             </div>
         </div>
-        <img [src]="this.image" alt="">
-        <div class="article-text"><p>{{this.text}}</p></div>
+        <img [src]="image" alt="">
+        <div class="article-text"><p>{{text}}</p></div>
         <div id="infoBorber" class="info">
             <div class="author">
-                <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+this.photoAuthor+')'}"></div></div>
-                <div>kevin black</div>
+                <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+photoAuthor+')'}"></div></div>
+                <div>{{author}}</div>
             </div>
             <div class="likes">
                 <div>Novemder 29, 2019</div>
                 <div class="middleLike">
                     <fa-icon [icon]="faHeart"></fa-icon>
-                    <div>{{this.likes}}</div>
+                    <div>{{likes}}</div>
                 </div>
                 <div>
                     <fa-icon [icon]="faStar"></fa-icon>
@@ -55,9 +55,9 @@
     <div class="realComments">
         <div>
             <fa-icon [icon]="faUserCircle"></fa-icon>
-            <span>{{this.authorComment}}</span>
+            <span>{{authorComment}}</span>
         </div>
-        <p>{{this.textComment}}</p>
+        <p>{{textComment}}</p>
         <div class="footerComment">
             <button> Read more...</button>
             <div>Novemder 30, 2019</div>
