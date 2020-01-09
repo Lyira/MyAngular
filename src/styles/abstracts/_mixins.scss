@@ -12,7 +12,7 @@
     width: 44px;
     border: solid 1px $blue;
     border-radius: 100%;
-    padding: 0;
+    
     >div {
         background-size: cover;
         margin: auto;
@@ -49,50 +49,12 @@
 }
 @mixin tagSpan {
     span {
+        font-size: $fontText14;
         padding: 2px 15px;
-        font-weight: 500;
         background-color: $lightgrey;
         border-radius: 15px;
         margin-right: 16px;
         text-transform: capitalize;
-    }
-}
-@mixin infoAuthorLike {
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between; 
-    >div {
-        >div {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    }
-    .author {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        >div {
-            text-transform: uppercase;
-            font-weight: 500;
-            &:first-child {
-                @include photoIcon;
-            }
-        }
-    }
-    .likes {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        >div div{
-            display: flex;
-            align-items: center;
-            height: inherit;
-        }
-    }
-    .middleLike {
-        height: 25px;
-        border-right: solid 1px $lightgrey;
     }
 }
 @mixin hoverFont( $color: $black)  {
@@ -105,12 +67,6 @@
     transition: all .3s ease;
     &:hover {
         text-shadow: 0 0 0.9px $black, 0 0 0.9px $black;
-    }
-}
-@mixin hoverLoad  {
-    transition: all .3s ease;
-    &:hover {
-        background-color: darken($blue, 15); 
     }
 }
 @mixin layout404 {
@@ -131,15 +87,22 @@
         background-position: center;
     }
     button {
-        @include hoverLoad;
+
+        @include buttonBlue;
         margin-top: 36px;
-        color: $white;
         font-weight: $medium;
-        background-color: $blue;
         font-size: $fontText14;
         height: 40px;
         width: 300px;
-        border-radius: 25px;
+    }
+}
+@mixin buttonBlue {
+    color: $white;
+    background-color: $blue;
+    border-radius: 25px;
+    transition: all .3s ease;
+    &:hover {
+        background-color: darken($blue, 15); 
     }
 }
 @mixin button404 {
@@ -164,4 +127,23 @@
         height: 30px;
     }
 } 
-
+@mixin bgCenter {
+    background-size: cover;
+    background-position: center;
+}
+@mixin columnPosition($justify-content: center ) {
+    display: flex;
+    flex-direction: column;
+    justify-content: $justify-content;
+}
+@mixin positionBottom ($bottom: 0, $left: 0, $right: 0) {
+    position: absolute;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+}
+@mixin rowPosition ($justify-content: center, $align-items: center) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
