@@ -12,32 +12,35 @@ import * as mockdata from '../mockdata/mockdata.component';
   styleUrls: ['./article.component.scss']
 })
 export class ArticleComponent implements OnInit {
-  faHeart = faHeart;
-  faStar = faStar;
-  faUserCircle = faUserCircle;
-  faChevronRight = faChevronRight;
-  faChevronLeft = faChevronLeft;
+  faHeart:any = faHeart;
+  faStar:any = faStar;
+  faUserCircle:any = faUserCircle;
+  faChevronRight:any = faChevronRight;
+  faChevronLeft:any = faChevronLeft;
 
-  author;
-  authorComment;
-  image; 
-  likes; 
-  title;
-  text;
-  textComment;
-  photoAuthor;
-
-  constructor() { }
-
-  ngOnInit() {
-    this.title = mockdata.listArticle[3].title;
-    this.author = mockdata.listArticle[3].author;
-    this.authorComment = mockdata.listArticle[3].comments.author;
-    this.likes = mockdata.listArticle[3].reactionsCounts.likes;
-    this.image = mockdata.listArticle[3].image;
-    this.text = mockdata.listArticle[3].text;
-    this.textComment = mockdata.listArticle[3].comments.text;
-    this.photoAuthor = mockdata.user[0].photo;
+  author:string;
+  authorComment:string;
+  image:string; 
+  likes:number; 
+  title:string;
+  text:string;
+  textComment:string;
+  photoAuthor:string;
+  setVariables(){
+    this.title = mockdata.listArticles[3].title,
+    this.author = mockdata.listArticles[3].author,
+    this.authorComment = mockdata.listArticles[3].comments.author,
+    this.likes = mockdata.listArticles[3].reactionsCounts.likes,
+    this.image = mockdata.listArticles[3].image,
+    this.text = mockdata.listArticles[3].text,
+    this.textComment = mockdata.listArticles[3].comments.text,
+    this.photoAuthor = mockdata.users[3].photo
   }
-
+  constructor() {}
+  
+  ngOnInit() {
+    this.setVariables();
+  }
+  
+  
 }
