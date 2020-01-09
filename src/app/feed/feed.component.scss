@@ -1,190 +1,175 @@
-@import '../../styles/abstracts/variables';
-@import '../../styles/abstracts/mixins';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
 
-
-.container-feed {
-    div, span, p, button {
-        font-size: 14px;
-    }
-    .card-feed {
-        max-width: 992px;
-        width: 95%;
-        @include shadowsCard($grey);
-        height: 225px;
-        display: flex;
-        margin: 40px auto;
-        > div:first-child {
-            width: 33%;
-            display:flex;
-            justify-content: center; 
-            align-items: center; 
-            overflow: hidden;
-            position: relative;
+div, span, p, button {
+    font-size: 14px;
+}
+.card-feed {
+    max-width: 992px;
+    width: 95%;
+    @include shadowsCard($grey);
+    height: 225px;
+    display: flex;
+    margin: 40px auto;
+    > div:first-child {
+        width: 33%;
+        @include rowPosition;
+        overflow: hidden;
+        position: relative;
+        p {
+            padding: 3px;
+            background-color: rgba(210, 210, 210, .8);
+            position: absolute;
+            bottom: 20px;
+            right: 5px;
+            color: $white;
+            opacity: 0;
+            font-size: 20px;
+            z-index: 10;
+            transform: translate(200%);
+            transition: all .5s ease;
+        }
+        &:hover {
             p {
-                padding: 3px;
-                background-color: rgba(210, 210, 210, .8);
-                position: absolute;
-                bottom: 20px;
-                right: 5px;
-                color: $white;
-                opacity: 0;
-                font-size: 20px;
-                z-index: 10;
-                transform: translate(200%);
-                transition: all .5s ease;
-            }
-            &:hover {
-                p {
-                    transform: translate(0%);
-                    opacity: 1;
-                }
-                &::after {
-                transform: translate(50%) skew(-45deg);
-                z-index: 5;
-                }
+                transform: translate(0%);
+                opacity: 1;
             }
             &::after {
-                content: " ";
-                position: absolute;
-                height: 100%;
-                width: 100%;
-                transform: translate(200%) skew(-45deg);
-                background-color: rgba(210, 210, 210, .8);
-                right: 0;
-                bottom: 0;
-                z-index: -5;
-                transition: all .5s ease;
-            }
-            img {
-                display: block;
-                width: auto;
-                height: 100%;
+            transform: translate(50%) skew(-45deg);
+            z-index: 5;
             }
         }
-        .infoCard {
-            position: relative;
-            width: 67%;
-            padding: 27px 24px 24px 32px;
-            @include tagSpan;
-            span {
-                margin-right: 8px;
-            }
-            h3 {
-                padding: 16px 0;
-                font-size: $fontText20;
-                font-weight: $bold;
-                text-transform: capitalize;
-            }
-            .info {
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                left: 0;
-                margin: 10px 24px 24px 32px;
-                @include infoAuthorLike;
-                > div >div {
-                    padding: 0 8px;
-                }
-                .author {
-                    div:first-child {
-                        height: 34px;
-                        width: 34px;
-                    }
-                }
-                .likes {
-                    fa-icon {
-                        @include hoverFont($blue); 
-                    }
-                    > div div {
-                        padding-left: 5px;
-                        font-size: 14px;
-                    }
-                }
-            }
+        &::after {
+            content: " ";
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            transform: translate(200%) skew(-45deg);
+            background-color: rgba(210, 210, 210, .8);
+            right: 0;
+            bottom: 0;
+            z-index: -5;
+            transition: all .5s ease;
+        }
+        img {
+            display: block;
+            width: auto;
+            height: 100%;
         }
     }
-    button {
-        @include hoverLoad;
-        height: 40px;
-        width: 300px;
-        border-radius: 25px;
-        background-color: $blue;
+}
+.infoCard {
+    position: relative;
+    width: 67%;
+    padding: 27px 24px 24px 32px;
+    @include tagSpan;
+    span {
+        margin-right: 8px;
+    }
+    h3 {
+        padding: 16px 0;
+        font-size: $fontText20;
+        font-weight: $bold;
+        text-transform: capitalize;
+    }
+}
+.info {
+    @include positionBottom;
+    margin: 10px 24px 24px 32px;
+    > div >div {
+        padding: 0 8px;
+    }
+    .author  > div:first-child {
+        height: 34px;
+        width: 34px;
+        padding: 0;
+    }
+}
+.likes {
+    fa-icon {
+        @include hoverFont($blue); 
+    }
+    > div div {
+        padding-left: 5px;
+        font-size: 14px;
+    }
+}
+button {
+    height: 40px;
+    width: 300px;
+    display: block;
+    margin: 0 auto 40px;
+    font-weight: 500;
+    text-transform: uppercase;
+    @include buttonBlue;
+    fa-icon {
         color: $white;
-        display: block;
-        margin: 0 auto 40px;
-        text-transform: uppercase;
-        fa-icon {
-            color: $white;
-            padding-right: 10px;
-        }
+        padding-right: 10px;
     }
 }
 @media(max-width: 800px) {
-    .container-feed {
-        div, span, p, button {
-            font-size: 12px;
+    div, span, p, button {
+        font-size: 12px;
+    }
+    .card-feed {
+        height: 190px;
+    }
+    .card-image {
+        &::after {
+            display: none;
         }
-        .card-feed {
-            height: 190px;
-            .card-image {
-                &::after {
-                    display: none;
-                }
-                p {
-                  display: none;
-                }
-            }
-            .infoCard {
-                padding: 20px 17px 17px 25px;
-                h3 {
-                    font-size: 17px;
-                }
-                .info {
-                    margin: 5px 17px 17px 25px;
-                }
-                .descripsionArticle {
-                   display: none;
-                }
-            }
+        p {
+          display: none;
         }
-        button {
-            width: 220px;
-            height: 34px;
+    }
+    .infoCard {
+        padding: 20px 17px 17px 25px;
+        h3 {
+            font-size: 17px;
         }
+    }
+    .info {
+        margin: 5px 17px 17px 25px;
+    }
+    .descripsionArticle {
+       display: none;
+    }
+    button {
+        width: 220px;
+        height: 34px;
     }
 }
 @media(max-width: 600px) {
-    .container-feed {
-        div, span, p, button {
-            font-size: 8px;
+    .card-feed {
+        height: 130px;
+    }
+    .infoCard {
+        width: 60%;
+        padding: 10px;
+        span {
+            padding: 2px 5px ;
+            font-size: 9px;
         }
-        .card-feed {
-            .card-image {
-                width: 40%;
-            }
-            height: 130px;
-            .infoCard {
-                span {
-                    padding: 2px 5px ;
-                }
-                width: 60%;
-                padding: 10px;
-                h3 {
-                    padding: 10px 0 5px;
-                    font-size: 11px;
-                }
-                .info {
-                    margin: 0px 10px;   
-                    .author div:first-child {
-                        height: 24px;
-                        width: 24px;
-                    }
-                }
-            }
-        }
-        button {
-            width: 150px;
-            height: 30px;
+        h3 {
+            padding: 10px 0 5px;
+            font-size: 13px;
         }
     }
+    .info {
+        margin: 0px 10px; 
+        .author >div:first-child {
+            height: 24px;
+            width: 24px;
+        }
+    }
+    
+    .card-image {
+        width: 40%;
+    }
+    button {
+        width: 150px;
+        height: 30px;
+        font-size: 10px;
+    }
+
 }
