@@ -2,10 +2,9 @@
     <div class="container-profile">
         <div class="circle"></div>
         <div>
-            
             <div>
-                <div class="photo"></div>
-                <div class="name">{{this.authorUser}}</div>
+                <div class="photo" [ngStyle]="{'background-image': 'url('+photoAuthor+')'}"></div>
+                <div class="name">{{authorUser}}</div>
             </div>
             <div class="userInfo">
                 <div>
@@ -14,34 +13,34 @@
                 </div>
                 <div>
                     <div class="infoRow">Gender</div>
-                    <div>Male</div>
+                    <div>{{gender}}</div>
                 </div>
                 <div>
                     <div class="infoRow">Status</div>
-                    <div>{{this.status}}</div>
+                    <div>{{status}}</div>
                 </div>
                 <div>
                     <div class="infoRow">Email</div>
-                    <div>pwhite@gmail.com</div>
+                    <div>{{email}}</div>
                 </div>
             </div>
         </div>
         <h3>Most popular articles</h3>
         <div class="popular">
             <div class="blockArticles">
-                <div class="longCard smallCard">
-                    <div class="image" [ngStyle]="{'background-image': 'url('+this.image[2]+')'}"></div>
-                    <div class="title">{{this.title[2]}}</div>
-                    <div class="discripsion">{{this.description[2]}}</div>
+                <div class="smallCard" *ngFor="let article of listArticles.slice(0, 5), let idx = index" [ngClass] = "{ longCard: !idx, noExist: idx>1 }">
+                    <div class="image" [ngStyle]="{'background-image': 'url('+article.image+')'}"></div>
+                    <div class="title">{{article.title}}</div>
+                    <div class="discripsion">{{article.description}}</div>
                     <div class="info">
                         <div class="author">
-                            <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+this.photoAuthor+')'}"></div></div>
-                            <div>{{this.author[3]}}</div>
+                            <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+photoAuthor+')'}"></div></div>
+                            <div>{{authorUser}}</div>
                         </div>
                         <div class="likes">
                             <div class="middleLike">
                                 <fa-icon [icon]="faHeart"></fa-icon>
-                                <div>{{this.likes[2]}}</div>
+                                <div>{{article.reactionsCounts.likes}}</div>
                             </div>
                             <div>
                                 <fa-icon [icon]="faStar"></fa-icon>
@@ -49,82 +48,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="smallCard">
-                    <div class="image" [ngStyle]="{'background-image': 'url('+this.image[3]+')'}"></div>
-                    <div class="title">{{this.title[3]}}</div>
-                    <div class="info">
-                        <div class="author">
-                            <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+this.photoAuthor+')'}"></div></div>
-                         <div>{{this.author[3]}}</div>
-                        </div>
-                        <div class="likes">
-                            <div class="middleLike">
-                                <fa-icon [icon]="faHeart"></fa-icon>
-                                <div>{{this.likes[3]}}</div>
-                            </div>
-                            <div>
-                                <fa-icon [icon]="faStar"></fa-icon>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="smallCard noExist">
-                    <div class="image" [ngStyle]="{'background-image': 'url('+this.image[3]+')'}"></div>
-                    <div class="title">{{this.title[3]}}</div>
-                   <div class="info">
-                        <div class="author">
-                            <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+this.photoAuthor+')'}"></div></div>
-                            <div>{{this.author[3]}}</div>
-                        </div>
-                        <div class="likes">
-                            <div class="middleLike">
-                                <fa-icon [icon]="faHeart"></fa-icon>
-                                <div>{{this.likes[3]}}</div>
-                            </div>
-                            <div>
-                                <fa-icon [icon]="faStar"></fa-icon>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="smallCard noExist">
-                    <div class="image" [ngStyle]="{'background-image': 'url('+this.image[0]+')'}"></div>
-                    <div class="title">{{this.title[0]}}</div>
-                   <div class="info">
-                        <div class="author">
-                            <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+this.photoAuthor+')'}"></div></div>
-                            <div>{{this.author[3]}}</div>
-                        </div>
-                        <div class="likes">
-                            <div class="middleLike">
-                                <fa-icon [icon]="faHeart"></fa-icon>
-                                <div>{{this.likes[0]}}</div>
-                            </div>
-                            <div>
-                                <fa-icon [icon]="faStar"></fa-icon>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="smallCard noExist">
-                    <div class="image" [ngStyle]="{'background-image': 'url('+this.image[1]+')'}"></div>
-                    <div class="title">{{this.title[1]}}</div>
-                   <div class="info">
-                        <div class="author">
-                            <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+this.photoAuthor+')'}"></div></div>
-                            <div>{{this.author[3]}}</div>
-                        </div>
-                        <div class="likes">
-                            <div class="middleLike">
-                                <fa-icon [icon]="faHeart"></fa-icon>
-                                <div>{{this.likes[1]}}</div>
-                            </div>
-                            <div>
-                                <fa-icon [icon]="faStar"></fa-icon>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
             <div class="userStats">
                 <div class="stats">
@@ -142,27 +66,26 @@
                     </div>
                 </div>
             </div>
-    
         </div>
         <h3>Newest</h3>
-        <div class="wideCard">
-            <div class="image" [ngStyle]="{'background-image': 'url('+this.image[3]+')'}"></div>
+        <div class="wideCard" *ngFor="let article of listArticles.slice(0, 1)">
+            <div class="image" [ngStyle]="{'background-image': 'url('+article.image+')'}"></div>
             <div class="contentCard">
                 <div class="tags noExist">
                     <span>Programming</span>
                     <span>Software Developer</span>
                 </div>
-                <div class="title">{{this.title[3]}}</div>
-                <div class="discripsion">{{this.description[3]}}</div>
+                <div class="title">{{article.title}}</div>
+                <div class="discripsion">{{article.description}}</div>
                 <div class="info">
                     <div class="author">
-                        <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+this.photoAuthor+')'}"></div></div>
-                    <div>{{this.author[3]}}</div>
+                        <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+photoAuthor+')'}"></div></div>
+                    <div>{{authorUser}}</div>
                     </div>
                     <div class="likes">
                         <div class="middleLike">
                             <fa-icon [icon]="faHeart"></fa-icon>
-                            <div>{{this.likes[3]}}</div>
+                            <div>{{article.reactionsCounts.likes}}</div>
                         </div>
                         <div>
                             <fa-icon [icon]="faStar"></fa-icon>
@@ -174,56 +97,18 @@
         </div>
         <div class="listPopular">
             <div>
-                <div class="smallCard">
-                    <div class="image" [ngStyle]="{'background-image': 'url('+this.image[0]+')'}"></div>
-                    <div class="title">{{this.title[0]}}</div>
+                <div class="smallCard" *ngFor="let article of listArticles.slice(1, 4), let idx = index" [ngClass] = "{ noExist: idx>1 }">
+                    <div class="image" [ngStyle]="{'background-image': 'url('+article.image+')'}"></div>
+                    <div class="title">{{article.title}}</div>
                     <div class="info">
                         <div class="author">
-                            <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+this.photoAuthor+')'}"></div></div>
-                        <div>{{this.author[3]}}</div>
+                            <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+photoAuthor+')'}"></div></div>
+                        <div>{{authorUser}}</div>
                         </div>
                         <div class="likes">
                             <div class="middleLike">
                                 <fa-icon [icon]="faHeart"></fa-icon>
-                                <div>{{this.likes[0]}}</div>
-                            </div>
-                            <div>
-                                <fa-icon [icon]="faStar"></fa-icon>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="smallCard">
-                    <div class="image" [ngStyle]="{'background-image': 'url('+this.image[1]+')'}"></div>
-                    <div class="title">{{this.title[1]}}</div>
-                    <div class="info">
-                        <div class="author">
-                            <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+this.photoAuthor+')'}"></div></div>
-                        <div>{{this.author[3]}}</div>
-                        </div>
-                        <div class="likes">
-                            <div class="middleLike">
-                                <fa-icon [icon]="faHeart"></fa-icon>
-                                <div>{{this.likes[1]}}</div>
-                            </div>
-                            <div>
-                                <fa-icon [icon]="faStar"></fa-icon>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="smallCard noExist">
-                    <div class="image" [ngStyle]="{'background-image': 'url('+this.image[2]+')'}"></div>
-                    <div class="title">{{this.title[2]}}</div>
-                    <div class="info">
-                        <div class="author">
-                            <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+this.photoAuthor+')'}"></div></div>
-                        <div>{{this.author[3]}}</div>
-                        </div>
-                        <div class="likes">
-                            <div class="middleLike">
-                                <fa-icon [icon]="faHeart"></fa-icon>
-                                <div>{{this.likes[2]}}</div>
+                                <div>{{article.reactionsCounts.likes}}</div>
                             </div>
                             <div>
                                 <fa-icon [icon]="faStar"></fa-icon>
@@ -232,8 +117,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
-        
     </div>
 </div>
