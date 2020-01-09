@@ -1,25 +1,25 @@
 <div class="container-feed">
-    <div class="card-feed" routerLink="../article" routerLinkActive="active-link">
+    <div class="card-feed" routerLink="../article" routerLinkActive="active-link" *ngFor="let article of listArticles, let idx = index" >
         <div class="card-image">
             <p>READ MORE...</p>
-            <img [src]="this.image[3]" >
+            <img [src]="article.image" >
         </div>
         <div class="infoCard">
             <div>
                 <span>Programming</span>
                 <span>Software Developer</span>
             </div>
-            <h3>{{this.title[3]}}</h3>
-            <div class="descripsionArticle">{{this.description[3]}}</div>
+            <h3>{{article.title}}</h3>
+            <div class="descripsionArticle">{{article.description}}</div>
             <div class="info">
                 <div class="author">
-                    <div> <div class="photoAuthor" style="background-image: url(https://i.pinimg.com/originals/28/8a/0a/288a0a8bafb429a3a16a037869d85dc9.jpg)"></div></div>
-                <div>{{this.author[3]}}</div>
+                    <div> <div class="photoAuthor" [ngStyle]="{'background-image': 'url('+users[idx].photo+')'}"></div></div>
+                <div>{{article.author}}</div>
                 </div>
                 <div class="likes">
                     <div class="middleLike">
                         <fa-icon [icon]="faHeart"></fa-icon>
-                        <div>{{this.likes[3]}}</div>
+                        <div>{{article.reactionsCounts.likes}}</div>
                     </div>
                     <div>
                         <fa-icon [icon]="faStar"></fa-icon>
@@ -27,94 +27,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="card-feed" routerLink="../article" routerLinkActive="active-link">
-        <div class="card-image">
-            <p>READ MORE...</p>
-            <img [src]="this.image[0]" >
-        </div>
-        <div class="infoCard">
-            <div>
-                <span>Programming</span>
-                <span>Software Developer</span>
-            </div>
-            <h3>{{this.title[0]}}</h3>
-            <div class="descripsionArticle">{{this.description[0]}}</div>
-            <div class="info">
-                <div class="author">
-                    <div> <div class="photoAuthor" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK8-IT5bvfMBFnNy1pHDXhtdP3tg5ttGVbSSkpHWfN35ag5f9y&s)"></div></div>
-                <div>{{this.author[0]}}</div>
-                </div>
-                <div class="likes">
-                    <div class="middleLike">
-                        <fa-icon [icon]="faHeart"></fa-icon>
-                        <div>{{this.likes[0]}}</div>
-                    </div>
-                    <div>
-                        <fa-icon [icon]="faStar"></fa-icon>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card-feed" routerLink="../article" routerLinkActive="active-link">
-        <div>
-            <p>READ MORE...</p>
-            <img [src]="this.image[1]" >
-        </div>
-        <div class="infoCard">
-            <div>
-                <span>Programming</span>
-                <span>Software Developer</span>
-            </div>
-            <h3>{{this.title[1]}}</h3>
-            <div class="descripsionArticle">{{this.description[1]}}</div>
-            <div class="info">
-                <div class="author">
-                    <div> <div class="photoAuthor" style="background-image: url(https://www.eyefaceandbody.com/wp-content/themes/eye-face-and-body-theme/images/face-lift.jpg)"></div></div>
-                    <div>{{this.author[1]}}</div>
-                </div>
-                <div class="likes">
-                    <div class="middleLike">
-                        <fa-icon [icon]="faHeart"></fa-icon>
-                        <div>{{this.likes[1]}}</div>
-                    </div>
-                    <div>
-                        <fa-icon [icon]="faStar"></fa-icon>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card-feed" routerLink="../article" routerLinkActive="active-link">
-        <div>
-            <p>READ MORE...</p>
-            <img [src]="this.image[2]" >
-        </div>
-        <div class="infoCard">
-            <div>
-                <span>Programming</span>
-                <span>Software Developer</span>
-            </div>
-            <h3>{{this.title[2]}}</h3>
-            <div class="descripsionArticle">{{this.description[2]}}</div>
-            <div class="info">
-                <div class="author">
-                    <div> <div class="photoAuthor" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKb9PgHMU0ovkhUNavsfHwRZBFn9TQgBFK6nfdvmZlxaiajz2cwQ&s)"></div></div>
-                    <div>{{this.author[2]}}</div>
-                </div>
-                <div class="likes">
-                    <div class="middleLike">
-                        <fa-icon [icon]="faHeart"></fa-icon>
-                        <div><div>{{this.likes[2]}}</div></div>
-                    </div>
-                    <div>
-                        <fa-icon [icon]="faStar"></fa-icon>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    </div>     
    <button><fa-icon [icon]="faCloudDownloadAlt"></fa-icon>load more</button>
 </div>
 
